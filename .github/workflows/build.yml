@@ -5,13 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
       - name: Install dependency
         run: npm ci
       - name: Build project
         run: npm run build
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: dist
           name: build-file
@@ -20,6 +20,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get build project
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v5
         with:
           name: build-file
