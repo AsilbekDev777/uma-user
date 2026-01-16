@@ -1,10 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="container min-h-full bg-black">
+  <div class=" p-8 text-white">
+    <div class="max-w-6xl mx-auto grid grid-cols-12 gap-8">
+
+      <div class="col-span-7 space-y-8">
+
+        <div class="flex items-center gap-3 text-xl font-semibold">
+          <span nz-icon nzType="arrow-left" (click)="goBack()" class="cursor-pointer"></span>
+          Checkout
+        </div>
+
+        <div class="flex items-start gap-4">
+          <span nz-icon nzType="environment" class="text-green-400 text-xl mt-1"></span>
+          <div class="flex-1">
+            <p class="text-green-400 text-sm">Your location</p>
+            <p class="font-medium leading-tight">
+              Urban Poor Street, Pk. 2 New Visayas
+            </p>
+          </div>
+          <button nz-button nzType="link" class="!text-green-400">Edit</button>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <span nz-icon nzType="user" class="text-green-400 text-xl mt-1"></span>
+          <div class="flex-1">
+            <p class="text-green-400 text-sm">Personal Details</p>
+            <p class="font-medium">Marvin Ken Tumando</p>
+            <p class="text-sm text-gray-300">09123456789</p>
+            <p class="text-sm text-gray-300">
+              tumando.markvin@dnsc.edu.ph
+            </p>
+          </div>
+          <button nz-button nzType="link" class="!text-green-400">Edit</button>
+        </div>
+
+        <div>
+          <p class="text-green-400 mb-2 text-sm">Additional Info</p>
+
+          <textarea
+            nz-input
+            [(ngModel)]="notes"
+            maxlength="600"
+            placeholder="Notes about your order, e.g. special notes for delivery"
+            class="!h-[100px] !resize-none !overflow-y-auto !bg-white !text-black !rounded-sm"
+          ></textarea>
+
+          <div class="text-right text-xs text-gray-300 mt-1">
+            {{ notes.length }}/600
+          </div>
+        </div>
+      </div>
+      <div class="col-span-5">
+        <div
+          class="bg-[#1C1D21]
+               rounded-2xl p-6 space-y-5 shadow-2xl border border-black"
+        >
+          <h3 class="font-semibold text-sm text-white">Order Summary</h3>
+
+          @for (item of items; track $index) {
+            <div class="flex justify-between items-center">
+              <div class="flex items-center gap-3">
+                <img
+                  [src]="item.image"
+                  class="w-10 h-10 rounded-md bg-white p-1"
+                />
+                <span class="text-sm">
+                {{ item.name }} x{{ item.qty }}
+              </span>
+              </div>
+              <span class="text-sm">P{{ item.price }}</span>
+            </div>
+          }
+
+          <hr class="border-black">
+
+          <div class="flex justify-between text-sm">
+            <span>Subtotal</span>
+            <span>P{{ subtotal }}</span>
+          </div>
+
+          <div class="flex justify-between text-sm">
+            <span>Shipping</span>
+            <span class="text-green-300">Free</span>
+          </div>
+
+          <div class="flex justify-between font-semibold">
+            <span>Total</span>
+            <span>P{{ subtotal }}</span>
+          </div>
+
+          <div class="space-y-2">
+            <p class="font-semibold text-sm">Payment Method</p>
+
+            <label nz-radio nzValue="cod" [(ngModel)]="payment" class="block text-white">
+              Cash on Delivery
+            </label>
+          </div>
+
+          <button
+            nz-button
+            nzBlock
+            class="!bg-white !text-[#658147] !border-none rounded-full font-semibold py-1"
+          >
+            Place Order
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

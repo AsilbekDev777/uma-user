@@ -1,10 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="container text-white px-20">
+  <div class="flex flex-col justify-between h-full">
+    <div>
+      <button class="cursor-pointer !text-white" (click)="goBack()">
+        <nz-icon nzType="arrow-left" nzTheme="outline"/>
+      </button>
+      <div class="flex flex-col justify-center items-center">
+        <div class="flex flex-row gap-2 items-center justify-center"><p class="text-4xl text-[#658147]">What’s
+          inside</p>
+          <p class="font-bold text-4xl">my cart?</p></div>
+        <div class="flex flex-col items-center">
+          <p class="w-[550px] text-center">Review your selected items below. Ready to proceed? Click “Checkout” to
+            complete your purchase. If you need to make any changes, you can update quantities or remove items directly
+            from yaour cart. Happy shopping!</p>
+        </div>
+        <button class="bg-[#D9D9D9] px-6 py-2 rounded-4xl text-black cursor-pointer mb-10">
+          <span>View cart</span>
+        </button>
+      </div>
+    </div>
+    <div class="h-full p-8 text-white">
+      <div class="grid grid-cols-12 gap-6 max-w-7xl mx-auto">
+        <div class="col-span-9 space-y-4">
+
+          <div class="grid grid-cols-12 text-sm text-gray-300 px-4">
+            <div class="col-span-1">
+              <label nz-checkbox></label>
+            </div>
+            <div class="col-span-2">IMAGE</div>
+            <div class="col-span-3">PRODUCT</div>
+            <div class="col-span-2">PRICE</div>
+            <div class="col-span-2">QUANTITY</div>
+            <div class="col-span-2">REMOVE</div>
+          </div>
+
+          @for (item of items; track $index) {
+            <div class="grid grid-cols-12 items-center bg-[#658147] rounded-xl px-4 py-3 shadow-md">
+            <div class="col-span-1">
+              <label nz-checkbox [(ngModel)]="item.selected"></label>
+            </div>
+            <div class="col-span-2">
+              <img
+                [src]="item.image"
+                class="w-14 h-14 rounded-lg bg-white p-1"
+              />
+            </div>
+
+            <div class="col-span-3 font-semibold">
+              {{ item.name }}
+            </div>
+
+            <div class="col-span-2">
+              {{ item.price }}
+            </div>
+
+            <div class="col-span-2 flex items-center gap-2">
+              <button (click)="decrease(item)">
+                -
+              </button>
+
+              <span>{{ item.quantity }}</span>
+
+              <button (click)="increase(item)">
+                +
+              </button>
+            </div>
+
+            <div class="col-span-2">
+              <button
+                nz-button
+                nzType="text"
+                nzDanger
+                (click)="remove(item)"
+              >
+                <span nz-icon nzType="delete" class="!text-white"></span>
+              </button>
+            </div>
+          </div>
+          }
+
+        </div>
+        <div class="col-span-3 space-y-4 h-full">
+          <div class="bg-gradient-to-br from-[#597445] to-[#A7DA82] rounded-xl p-6 space-y-4 shadow-lg">
+            <div class="flex justify-between">
+              <span>Subtotal</span>
+              <span>P{{ subtotal }}</span>
+            </div>
+
+            <div class="flex justify-between">
+              <span>Shipping</span>
+              <span class="text-green-300">Free</span>
+            </div>
+
+            <hr class="border-green-700"/>
+
+            <div class="flex justify-between text-lg font-bold">
+              <span>Total</span>
+              <span>P{{ subtotal }}</span>
+            </div>
+          </div>
+
+          <button
+            nz-button
+            nzType="primary"
+            nzBlock
+            class="!bg-green-600 hover:!bg-green-500 !border-none rounded-full py-1"
+          >
+            Check out
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

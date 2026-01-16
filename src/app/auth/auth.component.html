@@ -1,10 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="min-h-screen flex bg-[#121417]">
+
+  <!-- LEFT PANEL -->
+  <div class="w-full lg:w-[50%] flex flex-col justify-center px-10 lg:px-20 text-white">
+
+    <!-- LOGO -->
+    <div class="mb-8 flex justify-center">
+        <img src="assets/images/logo.svg" class="w-40 h-40 items-center " alt="logo"/>
+    </div>
+
+    <!-- TITLE -->
+    <h1 class="text-[32px] font-semibold mb-1 text-white">Login</h1>
+    <p class="text-gray-400 text-sm mb-10">
+      Enter your account details
+    </p>
+
+    <!-- EMAIL -->
+    <div class="mb-7">
+      <label class="block text-sm text-gray-400 mb-2">
+        Email
+      </label>
+      <input
+        nz-input
+        type="email"
+        value="valera.aronjohnsmith@dnsc.edu.ph"
+        class="!bg-transparent !border-0 !border-b !border-gray-600 !text-white !px-0 !rounded-none focus:!border-[#6b8e3b]"
+      />
+    </div>
+
+    <!-- PASSWORD -->
+    <div class="mb-4 relative">
+      <label class="block text-sm text-gray-400 mb-2">
+        Password
+      </label>
+      <input
+        nz-input
+        type="password"
+        class="!bg-transparent !border-0 !border-b !border-gray-600 !text-white !px-0 !rounded-none focus:!border-[#6b8e3b]"
+      />
+
+      <!-- EYE -->
+      <span class="absolute right-0 bottom-2 text-gray-400 cursor-pointer">
+        <span nz-icon nzType="eye" nzTheme="outline"></span>
+      </span>
+    </div>
+
+    <!-- FORGOT -->
+    <div class="text-sm text-gray-500 mb-10 cursor-pointer">
+      Forgot Password?
+    </div>
+
+    <!-- LOGIN BUTTON -->
+    <button
+      nz-button
+      nzType="primary"
+      class="!h-[44px] !bg-[#6b8e3b] !border-none !rounded-md !text-sm mb-12"
+    >
+      Login
+    </button>
+
+    <!-- SIGN UP -->
+    <div class="text-sm text-gray-500 flex items-center gap-3">
+      <span>Don't have an account?</span>
+      <span
+        class="px-4 py-1 rounded-md bg-[#1c1f24] text-white cursor-pointer text-sm"
+      >
+        Sign up
+      </span>
+    </div>
+
+  </div>
+
+  <!-- RIGHT IMAGE -->
+  <div class="hidden lg:block w-[50%] relative">
+    <img
+      src="assets/images/auth.svg"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+  </div>
+
+</div>

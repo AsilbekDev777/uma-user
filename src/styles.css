@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../src/assets/styles/global.css";
+@import "../src/assets/styles/ng-zorro.css";
+@import "tailwindcss";
+
+* {
+  transition: background, color .3s, width .3s cubic-bezier(.2, 0, 0, 1) 0s !important;
+}

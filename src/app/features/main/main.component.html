@@ -1,10 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="container overflow-auto h-full">
+  <div class="flex flex-col items-center mb-15">
+    <div class="flex flex-row gap-2"><p class="text-4xl text-[#658147]">Welcome,</p>
+      <p class="font-bold text-4xl">Marvin!</p></div>
+    <div class="flex flex-col items-center">
+      <p class="text-4xl font-bold text-[#658147]">Discover the freshness of local</p>
+      <p class="w-[550px] text-center">Experience the true taste of your community with UMA. Our online
+        marketplace connects you directly to local
+        farmers, food producers, and community gardens, offering a wide variety of fresh, sustainable, and delicious
+        products.</p>
+    </div>
+    <button class="bg-[#D9D9D9] px-6 py-2 rounded-4xl text-black cursor-pointer mb-10">
+      <span>Find farm products</span>
+    </button>
+  </div>
+  <div class="flex flex-col items-center justify-between">
+    <div class="flex flex-row gap-5 items-center justify-between pb-8">
+      <button
+        class="cursor-pointer bg-[#EBEBEB] text-[#263238] px-5 py-2 rounded-3xl hover:bg-[#658147] [&.is-selected]:bg-[#658147] hover:text-white [&.is-selected]:text-white">
+        All
+      </button>
+      <button
+        class="cursor-pointer bg-[#EBEBEB] text-[#263238] px-5 py-2 rounded-3xl hover:bg-[#658147] [&.is-selected]:bg-[#658147] hover:text-white [&.is-selected]:text-white">
+        Cereal
+      </button>
+      <button
+        class="cursor-pointer bg-[#EBEBEB] text-[#263238] px-5 py-2 rounded-3xl hover:bg-[#658147] [&.is-selected]:bg-[#658147] hover:text-white [&.is-selected]:text-white">
+        Fruits
+      </button>
+      <button
+        class="cursor-pointer bg-[#EBEBEB] text-[#263238] px-5 py-2 rounded-3xl hover:bg-[#658147] [&.is-selected]:bg-[#658147] hover:text-white [&.is-selected]:text-white">
+        Vegetables
+      </button>
+      <button
+        class="cursor-pointer bg-[#EBEBEB] text-[#263238] px-5 py-2 rounded-3xl hover:bg-[#658147] [&.is-selected]:bg-[#658147] hover:text-white [&.is-selected]:text-white">
+        Spices
+      </button>
+      <button
+        class="cursor-pointer bg-[#EBEBEB] text-[#263238] px-5 py-2 rounded-3xl hover:bg-[#658147] [&.is-selected]:bg-[#658147] hover:text-white [&.is-selected]:text-white">
+        Dairy
+      </button>
+      <button
+        class="cursor-pointer bg-[#EBEBEB] text-[#263238] px-5 py-2 rounded-3xl hover:bg-[#658147] [&.is-selected]:bg-[#658147] hover:text-white [&.is-selected]:text-white">
+        Chicken
+      </button>
+      <button
+        class="cursor-pointer bg-[#EBEBEB] text-[#263238] px-5 py-2 rounded-3xl hover:bg-[#658147] [&.is-selected]:bg-[#658147] hover:text-white [&.is-selected]:text-white">
+        Meat
+      </button>
+    </div>
+  <div>
+      <nz-card
+        [nzBordered]="false"
+        style="width: 280px; height: 400px; border-radius: 16px; background: linear-gradient(to bottom, #658147, #151B0F); color: white;"
+      >
+        <div class="pl-[19px] pt-[15px]">
+          <img
+            src="assets/images/blueberry.png"
+            alt="Blueberry"
+            style="object-fit: cover; border-radius: 12px;"
+          />
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px;">
+          <div>
+            <div style="font-size: 14px; color: #ccc;">50 per kilo</div>
+            <div style="font-weight: bold; font-size: 18px;">Blueberry</div>
+          </div>
+          <div class="flex flex-col">
+            <p class="mb-0">Add to cart</p>
+            <div class="flex justify-end mt-[3px]">
+              <button>
+                <nz-icon nzType="shopping-cart" nzTheme="outline"/>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-[16px] flex flex-row justify-between px-5">
+          <button nz-button nzType="default" class="rounded-md" (click)="goToBuy()">Check out</button>
+          <button nz-button nzType="default" class="rounded-md" (click)="details()">Details</button>
+        </div>
+      </nz-card>
+    </div>
+  </div>
+  <div>
+    <div class="flex text-left w-full px-60 pt-20">
+      <p class="text-4xl font-bold text-white">Explore markets <span
+        class="text-4xl font-bold text-[#658147]">near you</span></p>
+    </div>
+    <div class="px-60 rounded-3xl h-[400px]">
+      <div id="map" style="width: 100%; height: 100%;"></div>
+    </div>
+  </div>
+</div>

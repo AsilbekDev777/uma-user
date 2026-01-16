@@ -1,10 +1,129 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="bg-black text-white w-full h-full flex flex-col justify-between">
+  <div class="px-10 pt-8">
+    <div class="flex flex-row justify-between">
+      <img src="assets/images/logo.svg" alt="Logo" class="w-[55px] h-[55px]">
+      <div class="flex flex-row justify-between gap-5 items-center">
+        <button class="cursor-pointer hover:bg-[#F2F1FA] px-4 py-2 rounded-3xl">
+          <img src="assets/icons/search-icon.svg" alt="search">
+        </button>
+        <button class="cursor-pointer hover:bg-[#597445] px-4 py-2 rounded-3xl" (click)="goCard()">
+          <img src="assets/icons/card-icon.svg" alt="card">
+        </button>
+        <button class="hover:bg-[#597445] px-4 py-2 rounded-3xl cursor-pointer" (click)="goProfile()">
+          <img src="assets/icons/profile-icon.svg" alt="" class="w-[24px] h-[24px]">
+        </button>
+      </div>
+    </div>
+    <button nz-button nzType="text" class="!text-white !p-0 mx-5">
+      <span nz-icon nzType="arrow-left" class="text-xl" (click)="goBack()"></span>
+    </button>
+    <div class="grid grid-cols-12 gap-12 mt-16 items-center">
+
+      <div class="col-span-4 flex justify-center">
+        <div
+          class="w-[300px] h-[300px]
+               bg-gradient-to-tr from-[#1C1D21] to-[#658147]
+               rounded-3xl flex items-end justify-end"
+        >
+          <img
+            [src]="product.image"
+            class="w-[260px] h-[260px] object-contain
+                 bg-white rounded-2xl p-4"
+          />
+        </div>
+      </div>
+
+      <div class="col-span-5 space-y-4">
+
+        <div class="flex items-center gap-3 text-sm text-gray-300">
+          <img src="assets/images/profile-logo.svg" class="w-7 h-7 rounded-full">
+          <div class="leading-tight">
+            <p class="text-white">{{ product.seller }}</p>
+            <p class="text-xs">{{ product.location }}</p>
+          </div>
+        </div>
+
+        <p class="text-xs tracking-[0.25em] text-green-400">
+          {{ product.category }}
+        </p>
+
+        <h1 class="text-4xl font-bold leading-none">
+          {{ product.name }}
+        </h1>
+
+        <div class="flex items-center gap-5 mt-4">
+          <button
+            nz-button
+            nzType="default"
+            class="!w-8 !h-8 !rounded-full !bg-white !text-black !p-0"
+            (click)="decrease()"
+          >
+            -
+          </button>
+
+          <span class="text-lg">{{ quantity }}</span>
+
+          <button
+            nz-button
+            nzType="default"
+            class="!w-8 !h-8 !rounded-full !bg-white !text-black !p-0"
+            (click)="increase()"
+          >
+            +
+          </button>
+        </div>
+        <button
+          nz-button
+          nzType="primary"
+          class="!bg-green-600 !border-none !rounded-full
+               px-7 py-1 my-3 font-medium"
+        >
+          Add to cart
+        </button>
+
+        <p class="text-sm text-green-300">
+          {{ product.price }} per kilo
+        </p>
+      </div>
+
+      <div class="col-span-3 text-sm space-y-10">
+
+        <div>
+          <p class="text-green-400 text-xs mb-1">OTHER INFORMATION</p>
+          <p>Stock Status: Available ({{ product.stock }})</p>
+        </div>
+
+        <div>
+          <p class="text-green-400 text-xs mb-1">SHIPPING INFORMATION</p>
+          <p>{{ product.shipping }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nz-footer>
+    <div class="flex flex-row justify-between">
+      <img src="assets/images/logo.svg" alt="Logo">
+      <ul class="flex flex-row gap-5 items-center">
+        <li class="cursor-pointer">Home</li>
+        <li class="cursor-pointer">About</li>
+        <li class="cursor-pointer">Donate</li>
+        <li class="cursor-pointer">Blog</li>
+        <li class="cursor-pointer">Contact</li>
+      </ul>
+      <div class="flex flex-row justify-between items-center gap-5">
+        <button>
+          <nz-icon nzType="facebook" nzTheme="outline" style="font-size: 24px"/>
+        </button>
+        <button>
+          <nz-icon nzType="twitter" nzTheme="outline" style="font-size: 24px"/>
+        </button>
+        <button>
+          <nz-icon nzType="instagram" nzTheme="outline" style="font-size: 24px"/>
+        </button>
+        <button>
+          <nz-icon nzType="linkedin" nzTheme="outline" style="font-size: 24px"/>
+        </button>
+      </div>
+    </div>
+  </nz-footer>
+</div>

@@ -1,0 +1,37 @@
+nz-layout {
+  background: #000000;
+  color: #fff;
+  height: 100%;
+}
+
+nz-header{
+  background:none;
+  height: 10%;
+  align-items: center;
+
+  img{
+    width: 55px;
+    height: 55px;
+  }
+  .btns{
+    button{
+      img{
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+nz-content{
+  height: 78%;
+  color: #ffffff;
+}
+nz-footer{
+  background: none;
+  height: 12%;
+  color: #ffffff;
+  img{
+    width: 55px;
+    height: 55px;
+  }
+}

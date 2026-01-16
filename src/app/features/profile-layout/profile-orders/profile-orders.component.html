@@ -1,10 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="container">
+  <h2 class="text-white px-20 text-4xl font-normal">Order <span class="font-bold"> History </span></h2>
+  <div class="flex flex-row gap-5 items-center justify-start pb-8 px-20">
+    <button
+      class="cursor-pointer text-xl bg-[#EBEBEB] text-[#263238] px-5 py-2 rounded-3xl">
+      All
+    </button>
+    <button
+      class="cursor-pointer text-xl bg-[#EBEBEB] text-[#263238] px-5 py-2 rounded-3xl">
+      To Receive
+    </button>
+    <button
+      class="cursor-pointer text-xl bg-[#EBEBEB] text-[#263238] px-5 py-2 rounded-3xl">
+      Refund/Return
+    </button>
+    <button
+      class="cursor-pointer text-xl bg-[#EBEBEB] text-[#263238] px-5 py-2 rounded-3xl">
+      Completed
+    </button>
+    <button
+      class="cursor-pointer text-xl bg-[#EBEBEB] text-[#263238] px-5 py-2 rounded-3xl">
+      Cancelled
+    </button>
+  </div>
+
+  <div class="px-20">
+    <div class="bg-[#1b1f23] rounded-2xl p-6 shadow-lg border border-none">
+
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-white text-lg font-semibold">
+          Latest Orders
+        </h2>
+
+        <div class="flex items-center gap-5 text-sm text-gray-300">
+          <span class="cursor-pointer hover:text-white">Customize</span>
+          <span class="cursor-pointer hover:text-white">Filter</span>
+          <span class="cursor-pointer hover:text-white">Export</span>
+        </div>
+      </div>
+
+      <nz-table
+        #basicTable
+        [nzBordered]="false"
+        [nzShowPagination]="false"
+        class="!bg-transparent"
+      >
+        <thead>
+        <tr class="border-b border-gray-600">
+          <th class="!bg-transparent !text-gray-300 text-xs">Order ID</th>
+          <th class="!bg-transparent !text-gray-300 text-xs">Product</th>
+          <th class="!bg-transparent !text-gray-300 text-xs">Order Date</th>
+          <th class="!bg-transparent !text-gray-300 text-xs">Price</th>
+          <th class="!bg-transparent !text-gray-300 text-xs">Payment</th>
+          <th class="!bg-transparent !text-gray-300 text-xs">Status</th>
+        </tr>
+        </thead>
+
+        <tbody>
+          @for (item of basicTable.data; track item.id) {
+
+            <tr
+              class="border-b border-gray-700"
+            >
+              <td class="text-white text-sm">#{{ item.id }}</td>
+              <td class="text-white text-sm">{{ item.product }}</td>
+              <td class="text-white text-sm">{{ item.date }}</td>
+              <td class="text-white text-sm">{{ item.price }}</td>
+              <td class="text-white text-sm">{{ item.payment }}</td>
+
+              <td class="text-sm font-medium"
+                  [ngClass]="{
+              'text-blue-400': item.status === 'Processing',
+              'text-green-400': item.status === 'Completed'
+            }">
+                {{ item.status }}
+              </td>
+            </tr>
+          }
+        </tbody>
+      </nz-table>
+    </div>
+
+  </div>
+
+
+</div>

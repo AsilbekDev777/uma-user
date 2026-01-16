@@ -1,0 +1,17 @@
+@tailwind utilities;
+::-webkit-scrollbar {
+  width: 2px;   /* вертикальный */
+  height: 2px;  /* горизонтальный */
+}
+
+/* Фон скролла */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Ползунок */
+::-webkit-scrollbar-thumb {
+  background: #658147;
+  height: 1px;
+  border-radius: 1px;
+}

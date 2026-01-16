@@ -1,0 +1,9 @@
+nz-footer{
+  background: none;
+  height: 12%;
+  color: #ffffff;
+  img{
+    width: 55px;
+    height: 55px;
+  }
+}

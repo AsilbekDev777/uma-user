@@ -1,0 +1,9 @@
+<svg width="24" height="27" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg" id="orders">
+  <path
+    d="M4.66667 1L1 6V23.5C1 24.163 1.25754 24.7989 1.71596 25.2678C2.17438 25.7366 2.79614 26 3.44444 26H20.5556C21.2039 26 21.8256 25.7366 22.284 25.2678C22.7425 24.7989 23 24.163 23 23.5V6L19.3333 1H4.66667Z"
+    stroke="#597445" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path
+    d="M16 12C16 12.7956 15.5786 13.5587 14.8284 14.1213C14.0783 14.6839 13.0609 15 12 15C10.9391 15 9.92172 14.6839 9.17157 14.1213C8.42143 13.5587 8 12.7956 8 12"
+    stroke="#597445" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1 7H23" stroke="#597445" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

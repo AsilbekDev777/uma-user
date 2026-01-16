@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<h4 class="text-[20px] font-[600]">{{ data?.title }}</h4>
+@if (data?.errorMessage) {
+  <p>
+    <span class="badge-danger">{{ 'error_description' }}:</span>
+    <span> {{ data.errorMessage }}</span>
+  </p>
+}
+<div nz-col nzSpan="24" class="flex flex-col relative mt-3">
+  <div class="flex justify-end gap-2 mt-3">
+    <button nz-button nzSize="large" class="radius-8-input" nzType="default" (click)="close()">
+      {{
+        'сancel'
+      }}
+    </button>
+    <button nz-button nzSize="large" class="radius-8-input" nzType="primary"
+            (click)="confirm()">{{ 'confirm' }}
+    </button>
+  </div>
+</div>
