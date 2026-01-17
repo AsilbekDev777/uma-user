@@ -69,16 +69,15 @@
           <div class="flex flex-col">
             <p class="mb-0">Add to cart</p>
             <div class="flex justify-end mt-[3px]">
-              <button>
+              <button class="cursor-pointer !text-white">
                 <nz-icon nzType="shopping-cart" nzTheme="outline"/>
               </button>
             </div>
           </div>
         </div>
 
-        <div class="text-center mt-[16px] flex flex-row justify-between px-5">
-          <button nz-button nzType="default" class="rounded-md" (click)="goToBuy()">Check out</button>
-          <button nz-button nzType="default" class="rounded-md" (click)="details()">Details</button>
+        <div class="text-center mt-[16px] px-4">
+          <button nz-button nzType="default" class="rounded-md w-full" (click)="details()">Details</button>
         </div>
       </nz-card>
     </div>

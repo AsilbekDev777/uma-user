@@ -29,9 +29,6 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  goToBuy(){
-    this.router.navigate(['checkout']);
-  }
   details():void {
       this.router.navigate(['product']);
   }

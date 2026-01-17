@@ -62,6 +62,10 @@ export class CardComponent {
     this.items = this.items.filter(i => i !== item);
   }
 
+  goPay(){
+    this.router.navigate(['checkout']);
+  }
+
   goBack(){
     this.router.navigate(['']);
   }
